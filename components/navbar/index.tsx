@@ -19,6 +19,7 @@ const NavBar = () => {
         icon={<HamburgerIcon />}
         aria-label={"Menu"}
         onClick={onOpen}
+        background={"primary"}
       />
       <MenuDrawer isOpen={isOpen} onClose={onClose} />
     </Flex>
