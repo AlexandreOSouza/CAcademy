@@ -3,6 +3,7 @@ import { useState } from "react";
 import { shortAddress } from "../../../../utils/strings";
 import { LineWave, MagnifyingGlass, Puff } from "react-loader-spinner";
 import BaseCTA from "../../../buttons/baseCTA";
+import Spline from "@splinetool/react-spline";
 
 const ClaimContent = () => {
   const [address, setAddress] = useState<string>();
@@ -23,7 +24,7 @@ const ClaimContent = () => {
       px={"50px"}
       background={"primary"}
     >
-      <Flex flex={1} flexDirection={"column"} pt={"5%"}>
+      <Flex flexDirection={"column"} pt={"5%"}>
         <Text
           color={"secondary"}
           fontSize={"15em"}
@@ -58,8 +59,8 @@ const ClaimContent = () => {
           </>
         )}
       </Flex>
-      <Flex flex={1}>
-        {/* TODO - Add some 3d object here related to the site  */}
+      <Flex flex={1} alignItems="center" justifyContent={"center"}>
+        <Spline scene="https://prod.spline.design/B7yUw139NMa0Ab9A/scene.splinecode" />
       </Flex>
     </Flex>
   );
