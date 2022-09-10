@@ -4,15 +4,12 @@ import { shortAddress } from "../../../../utils/strings";
 import { LineWave, MagnifyingGlass, Puff } from "react-loader-spinner";
 import BaseCTA from "../../../buttons/baseCTA";
 import Spline from "@splinetool/react-spline";
+import { useWallet } from "../../../../hooks/useWallet";
 
 const ClaimContent = () => {
-  const [address, setAddress] = useState<string>();
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-
+  const { address, connect, isLoading } = useWallet();
   const handleClick = () => {
-    setIsLoading(true);
-    setAddress("0x89795cC75Bab93b562A673b8FbD9c32E2eaD2BdD");
-    setIsLoading(false);
+    connect();
   };
 
   return (
@@ -47,14 +44,14 @@ const ClaimContent = () => {
             >
               Welcome {shortAddress(address)}
             </Text>
-            <BaseCTA>Claim your degree</BaseCTA>
+            <BaseCTA>Claim Your Degree</BaseCTA>
           </>
         ) : (
           <>
             {isLoading ? (
               <LineWave width="100" color="yellow" />
             ) : (
-              <BaseCTA onClick={handleClick}>Connect you wallet</BaseCTA>
+              <BaseCTA onClick={handleClick}>Connect You Wallet</BaseCTA>
             )}
           </>
         )}
